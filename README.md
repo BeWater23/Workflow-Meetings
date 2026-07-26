@@ -1,4 +1,4 @@
-# Computational chemistry / modeling workflow 
+# Computational chemistry / modeling workflow
 
 This repository contains a guided workshop that connects molecular structure
 preparation, conformer searching, descriptor calculation, and machine-learning
@@ -26,6 +26,133 @@ Begin with the
 [`descriptor-generation student guide`](descriptor_generation/START_HERE.md).
 The first part uses a Jupyter notebook; the second part repeats the same workflow
 from the command line.
+
+## Command-line basics
+
+This section introduces the terms and commands used throughout the workshop. No
+previous command-line or programming experience is required.
+
+### Vocabulary
+
+- **Terminal:** an application in which you give the computer text instructions.
+- **Command:** one instruction entered in the terminal.
+- **Option or flag:** a setting added to a command, such as `--version`.
+- **Folder or directory:** a location containing files. The terms mean the same
+  thing.
+- **Path:** the address of a file or directory.
+- **Working directory:** the directory in which the terminal is currently
+  operating.
+- **Python:** the programming language used by RDKit, AQME, and the workshop
+  scripts.
+- **Conda environment:** an isolated collection of compatible programs and
+  packages.
+- **Script:** a saved sequence of Python or shell instructions.
+- **Notebook:** a document containing explanations, executable cells, and their
+  results.
+
+Type only the text inside each code block, not the terminal prompt. Run one
+command at a time and inspect its output before continuing.
+
+### Navigate the filesystem
+
+Open the macOS Terminal application. Ask the terminal for your current location:
+
+```bash
+pwd
+```
+
+`pwd` means **print working directory**. Move into the repository by replacing
+the example path with its location on your computer:
+
+```bash
+cd "/path/to/Workflow-Meetings"
+```
+
+`cd` means **change directory**. Quotation marks protect paths containing spaces.
+Confirm the location and list its contents:
+
+```bash
+pwd
+ls
+```
+
+Move into the descriptor workshop and return to its parent directory:
+
+```bash
+cd descriptor_generation
+cd ..
+```
+
+`..` means the parent directory. A path without a leading `/` is interpreted
+relative to the current working directory.
+
+### Inspect files without editing them
+
+List the descriptor inputs and display the first two lines of the example CSV:
+
+```bash
+ls descriptor_generation/inputs
+head -n 2 descriptor_generation/inputs/A1.csv
+```
+
+In the second command, `head` displays the beginning of a file, `-n 2` requests
+two lines, and the final argument is the file path.
+
+### Activate a Conda environment
+
+Activate the chemistry environment:
+
+```bash
+conda activate aqme
+```
+
+The terminal prompt normally shows `(aqme)` after activation. Confirm which
+Python will run and check its version:
+
+```bash
+which python
+python --version
+```
+
+Run a short Python instruction directly from the terminal:
+
+```bash
+python -c "print('Hello from Python')"
+```
+
+Here, `python` starts Python, `-c` indicates that code follows on the command
+line, and `print(...)` produces the displayed output.
+
+### Useful terminal habits
+
+- Press Tab to complete a file or directory name.
+- Press Up arrow to recall the previous command.
+- Press Control-C to stop a running command.
+- Commands and file names are case-sensitive: `A1.csv` and `a1.csv` are
+  different names.
+- Use `pwd` whenever you are unsure which directory is active.
+- Read the final line of an error message first; it often contains the most
+  useful explanation.
+
+### Basic troubleshooting
+
+Check the working directory, environment, Python executable, and available files:
+
+```bash
+pwd
+conda activate aqme
+which python
+ls
+```
+
+Common messages:
+
+- `No such file or directory`: check the current directory, path, and spelling.
+- `command not found`: activate the required environment or check that the
+  program is installed.
+- `ModuleNotFoundError`: the active Python environment does not contain the
+  requested package.
+- A Python `Traceback`: begin with its final line, then work upward for context.
 
 ## Software setup
 
