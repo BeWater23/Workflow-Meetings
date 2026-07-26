@@ -90,6 +90,7 @@ def main() -> None:
     if mol is None:
         raise ValueError(f"RDKit could not parse this SMILES: {smiles}")
     formal_charge = Chem.GetFormalCharge(mol)
+    canonical_smiles = Chem.MolToSmiles(mol)
     mol = Chem.AddHs(mol)
 
     params = AllChem.ETKDGv3()
@@ -124,6 +125,12 @@ def main() -> None:
         record.SetDoubleProp("relative_energy_kcal_mol", relative_energy)
         record.SetIntProp("formal_charge", formal_charge)
         record.SetIntProp("optimization_not_converged", not_converged)
+        # QDESCP reads these fields when a pre-generated SDF ensemble is supplied.
+        # Their presence lets AQME validate mapped atoms and skip CSEARCH entirely.
+        record.SetProp("SMILES_INPUT", smiles)
+        record.SetProp("SMILES", canonical_smiles)
+        record.SetIntProp("Real charge", formal_charge)
+        record.SetIntProp("Mult", 1)
         writer.write(record)
 
         comment = (

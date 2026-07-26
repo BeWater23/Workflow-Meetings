@@ -2,7 +2,7 @@
 set -euo pipefail
 
 workshop_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-input_csv="${workshop_dir}/inputs/A1.csv"
+ensemble_sdf="${workshop_dir}/outputs/02_rdkit_search/A1_rdkit.sdf"
 output_dir="${workshop_dir}/outputs/05_aqme_descriptors"
 
 if ! python -c "import aqme" >/dev/null 2>&1; then
@@ -11,18 +11,27 @@ if ! python -c "import aqme" >/dev/null 2>&1; then
   exit 1
 fi
 
+if [[ ! -f "${ensemble_sdf}" ]]; then
+  echo "Missing manual conformer ensemble: ${ensemble_sdf}" >&2
+  echo "Run 'python scripts/rdkit_conformer_search.py' first." >&2
+  exit 1
+fi
+
 mkdir -p "${output_dir}"
 cd "${output_dir}"
 
-echo "Input:  ${input_csv}"
+echo "Ensemble: ${ensemble_sdf}"
 echo "Output: ${output_dir}"
 echo "Mapped atoms requested: 1, 2, 3"
 
 python -m aqme \
   --qdescp \
-  --input "${input_csv}" \
+  --files "../02_rdkit_search/A1_rdkit.sdf" \
+  --csv_name "../../inputs/A1.csv" \
+  --charge -1 \
+  --mult 1 \
   --qdescp_atoms "['1','2','3']" \
-  --destination "${output_dir}" \
+  --destination "." \
   --nprocs 4
 
-echo "Descriptor workflow complete."
+echo "Descriptor workflow complete; the supplied ensemble was reused without CSEARCH."
