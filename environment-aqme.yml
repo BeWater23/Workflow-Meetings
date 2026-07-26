@@ -1,0 +1,15 @@
+name: aqme
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - openbabel=3.1.1
+  - xtb=6.7.1
+  - crest=2.12
+  - libgfortran=14.2.0
+  - jupyterlab
+  - ipykernel
+  - pip:
+      - aqme==2.0.1
+

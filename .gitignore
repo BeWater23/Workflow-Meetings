@@ -1,0 +1,44 @@
+# Operating-system, Python, and notebook caches
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Workshop calculations (all are reproducible from inputs and scripts)
+aqme_descriptor_workshop/outputs/
+aqme_descriptor_workshop/inputs/outputs/
+
+# AQME-generated conformers and descriptor calculations. Keep the small helper
+# scripts that may live inside these folders.
+**/CSEARCH/*
+!**/CSEARCH/generate_ensemble.py
+**/QDESCP/*
+!**/QDESCP/generate_ensemble.py
+**/CMIN/*
+**/QPREP/*
+**/QCORR/*
+**/boltz/*
+
+# AQME result tables and run logs
+**/AQME-ROBERT_*.csv
+**/CSEARCH_data.dat
+**/QDESCP_data.dat
+**/CMIN_data.dat
+**/QPREP_data.dat
+**/QCORR_data.dat
+**/aqme.out
+
+# ROBERT-generated analysis, model, and report folders
+**/CURATE/
+**/GENERATE/
+**/PREDICT/
+**/VERIFY/
+**/ROBERT_report.pdf
+
+# Common calculation scratch and log files
+*.log
+*.tmp
+.CHRG
+.UHF
+xtboptok
+
