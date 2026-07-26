@@ -39,6 +39,7 @@ solubility_prediction/outputs/
 
 # Common calculation scratch and log files
 *.log
+!dft_descriptors/**/*.log
 *.tmp
 .CHRG
 .UHF
