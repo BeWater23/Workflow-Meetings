@@ -1,4 +1,4 @@
-# Computational chemistry workflow workshop
+# Computational chemistry / modeling workflow 
 
 This repository contains a guided workshop that connects molecular structure
 preparation, conformer searching, descriptor calculation, and machine-learning
