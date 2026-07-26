@@ -5,8 +5,9 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Workshop calculations (all are reproducible from inputs and scripts)
-aqme_descriptor_workshop/outputs/
-aqme_descriptor_workshop/inputs/outputs/
+descriptor_generation/outputs/
+descriptor_generation/my_notes.md
+descriptor_generation/inputs/outputs/
 
 # AQME-generated conformers and descriptor calculations. Keep the small helper
 # scripts that may live inside these folders.
@@ -41,4 +42,3 @@ aqme_descriptor_workshop/inputs/outputs/
 .CHRG
 .UHF
 xtboptok
-

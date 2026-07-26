@@ -6,22 +6,20 @@ ROBERT modeling.
 
 ## Start here
 
-The main workshop is in [`aqme_descriptor_workshop`](aqme_descriptor_workshop/).
+The main workshop is in [`descriptor_generation`](descriptor_generation/).
 
 - Complete beginners: begin with
-  [`START_HERE.md`](aqme_descriptor_workshop/START_HERE.md).
-- Facilitators: use
-  [`FACILITATOR_NOTES.md`](aqme_descriptor_workshop/FACILITATOR_NOTES.md).
+  [`START_HERE.md`](descriptor_generation/START_HERE.md).
 - Command-line reference: use the
-  [workshop README](aqme_descriptor_workshop/README.md).
+  [workshop README](descriptor_generation/README.md).
 - Interactive version: open
-  [`AQME_descriptor_and_conformer_workshop.ipynb`](aqme_descriptor_workshop/AQME_descriptor_and_conformer_workshop.ipynb).
+  [`AQME_descriptor_and_conformer_workshop.ipynb`](descriptor_generation/AQME_descriptor_and_conformer_workshop.ipynb).
 
 ## Repository contents
 
 | Path | Contents |
 | --- | --- |
-| `aqme_descriptor_workshop/` | Beginner-oriented AQME, RDKit, and CREST workshop |
+| `descriptor_generation/` | Beginner-oriented AQME, RDKit, and CREST workshop |
 | `descriptor_generation_aqme/` | Imines SMILES inputs and ensemble helper scripts |
 | `modeling_robert/` | Raw modeling inputs and DFT descriptor datasets |
 | `solubility_prediction/` | Solubility source data for AQME/ROBERT practice |
@@ -52,7 +50,7 @@ crest --version
 Then enter the workshop:
 
 ```bash
-cd aqme_descriptor_workshop
+cd descriptor_generation
 python scripts/smiles_to_xyz.py
 bash scripts/run_aqme_descriptors.sh
 ```

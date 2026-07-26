@@ -46,7 +46,7 @@ labels. Keep the original CSV beside every XYZ-derived workflow.
 From the repository root:
 
 ```bash
-cd aqme_descriptor_workshop
+cd descriptor_generation
 conda activate aqme
 workshop_dir="$PWD"
 python -m aqme

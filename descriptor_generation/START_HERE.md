@@ -33,7 +33,7 @@ pwd
 Move into the workshop folder:
 
 ```bash
-cd "/Users/luccapfitzer/Workflow-Meetings/aqme_descriptor_workshop"
+cd "/Users/luccapfitzer/Workflow-Meetings/descriptor_generation"
 ```
 
 `cd` means **change directory**. Quotation marks protect paths containing spaces.
@@ -240,4 +240,3 @@ Common messages:
 
 Errors are diagnostic information, not a sign that you have damaged anything.
 Generated workshop files live under `outputs/` and can be reproduced from the CSV.
-
