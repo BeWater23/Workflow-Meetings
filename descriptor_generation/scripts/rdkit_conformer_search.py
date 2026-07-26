@@ -81,7 +81,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=WORKSHOP_DIR / "outputs" / "03_rdkit_search",
+        default=WORKSHOP_DIR / "outputs" / "02_rdkit_search",
     )
     args = parser.parse_args()
 
@@ -169,4 +169,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -8,6 +8,7 @@ __pycache__/
 descriptor_generation/outputs/
 descriptor_generation/my_notes.md
 descriptor_generation/inputs/outputs/
+solubility_prediction/outputs/
 
 # AQME-generated conformers and descriptor calculations. Keep the small helper
 # scripts that may live inside these folders.

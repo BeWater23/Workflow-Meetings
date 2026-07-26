@@ -40,7 +40,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=WORKSHOP_DIR / "outputs" / "02_smiles_to_xyz" / "A1.xyz",
+        default=WORKSHOP_DIR / "outputs" / "01_smiles_to_xyz" / "A1.xyz",
     )
     parser.add_argument("--seed", type=int, default=20260726)
     args = parser.parse_args()
@@ -91,4 +91,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

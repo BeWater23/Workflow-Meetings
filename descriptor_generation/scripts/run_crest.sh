@@ -4,8 +4,8 @@ set -euo pipefail
 workshop_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 mode="${1:-quick}"
 threads="${2:-4}"
-output_dir="${3:-${workshop_dir}/outputs/04_crest_${mode}}"
-input_xyz="${workshop_dir}/outputs/02_smiles_to_xyz/A1.xyz"
+output_dir="${3:-${workshop_dir}/outputs/03_crest_${mode}}"
+input_xyz="${workshop_dir}/outputs/01_smiles_to_xyz/A1.xyz"
 
 if [[ "${mode}" != "quick" && "${mode}" != "full" ]]; then
   echo "Usage: bash scripts/run_crest.sh [quick|full] [threads] [output_dir]" >&2
@@ -48,4 +48,3 @@ if [[ ! -s crest_conformers.xyz ]]; then
 fi
 
 echo "CREST ensemble: ${output_dir}/crest_conformers.xyz"
-

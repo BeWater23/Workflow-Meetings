@@ -3,7 +3,7 @@ set -euo pipefail
 
 workshop_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 input_csv="${workshop_dir}/inputs/A1.csv"
-output_dir="${workshop_dir}/outputs/01_aqme_descriptors"
+output_dir="${workshop_dir}/outputs/05_aqme_descriptors"
 
 if ! python -c "import aqme" >/dev/null 2>&1; then
   echo "AQME is not available in this Python." >&2
@@ -26,4 +26,3 @@ python -m aqme \
   --nprocs 4
 
 echo "Descriptor workflow complete."
-

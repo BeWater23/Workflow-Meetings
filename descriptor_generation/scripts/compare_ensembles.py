@@ -51,17 +51,17 @@ def main() -> None:
     parser.add_argument(
         "--rdkit",
         type=Path,
-        default=WORKSHOP_DIR / "outputs" / "03_rdkit_search" / "rdkit_summary.csv",
+        default=WORKSHOP_DIR / "outputs" / "02_rdkit_search" / "rdkit_summary.csv",
     )
     parser.add_argument(
         "--crest",
         type=Path,
-        default=WORKSHOP_DIR / "outputs" / "04_crest_quick" / "crest_conformers.xyz",
+        default=WORKSHOP_DIR / "outputs" / "03_crest_quick" / "crest_conformers.xyz",
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=WORKSHOP_DIR / "outputs" / "05_comparison" / "relative_energies.csv",
+        default=WORKSHOP_DIR / "outputs" / "04_comparison" / "relative_energies.csv",
     )
     args = parser.parse_args()
 
@@ -102,4 +102,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
