@@ -1,4 +1,4 @@
-# Student guide: descriptor generation
+# Descriptor generation
 
 Follow this guide in order. Part A uses a Jupyter notebook so that every stage
 and result is visible. Part B repeats the workflow from the terminal so that the
